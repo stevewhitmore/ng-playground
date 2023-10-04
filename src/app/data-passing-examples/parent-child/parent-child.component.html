@@ -1,0 +1,5 @@
+<section>
+  <p>parent-child works!</p>
+  <app-pc-child-a (buttonClickEvent)="captureComponentAtext($event)"></app-pc-child-a>
+  <app-pc-child-b [incomingAtext]="componentAtext"></app-pc-child-b>
+</section>

@@ -1,0 +1,15 @@
+<section>
+  <h2>Implicit Subscribe</h2>
+  <ng-container *ngIf="cursorView$ | async; else updatedAttributes">
+    <p><strong>(new) cursor color:</strong> {{buttonAttributes.color}}</p>
+    <p><strong>(new) cursor shape:</strong> {{buttonAttributes.shape}}</p>
+  </ng-container>
+
+  <ng-template #updatedAttributes>
+    <p><strong>cursor color:</strong> {{buttonAttributes.color}}</p>
+    <p><strong>cursor shape:</strong> {{buttonAttributes.shape}}</p>
+  </ng-template>
+
+  <button (click)="changeCursorAttributes()">Change Button Attributes</button>
+</section>
+

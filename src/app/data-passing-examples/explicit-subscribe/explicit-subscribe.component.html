@@ -1,1 +1,26 @@
-<p>explicit-subscribe works!</p>
+<section>
+  <h2>Explicit Subscribe</h2>
+  <div>
+    <h3>Changes within the same component using subscribe method</h3>
+    <ng-container *ngIf="cursorView; else updatedAttributes">
+      <strong>(new) cursor color:</strong> {{buttonAttributes.color}}<br>
+      <strong>(new) cursor shape:</strong> {{buttonAttributes.shape}}<br>
+    </ng-container>
+
+    <ng-template #updatedAttributes class="changed">
+      <strong>cursor color:</strong> {{buttonAttributes.color}}<br>
+      <strong>cursor shape:</strong> {{buttonAttributes.shape}}<br>
+    </ng-template>
+
+    <br>
+    <button (click)="changeCursorAttributes()">Change Button Attributes</button>
+    <br><br>
+  </div>
+  <hr>
+  <div>
+    <!-- <h3>Sibling communication through parent using async pipe</h3> -->
+    <!-- <app-is-child-a (apiTriggerEvent)="getData()"></app-is-child-a>
+    <app-is-child-b [incomingData]="response"></app-is-child-b> -->
+  </div>
+</section>
+

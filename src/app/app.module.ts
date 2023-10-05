@@ -11,6 +11,7 @@ import { MouseTrackingComponent } from './mouse-tracking/mouse-tracking.componen
 import { PcChildAComponent } from './data-passing-examples/parent-child/pc-child-a/pc-child-a.component';
 import { PcChildBComponent } from './data-passing-examples/parent-child/pc-child-b/pc-child-b.component';
 import { IsChildAComponent } from './data-passing-examples/implicit-subscribe/is-child-a/is-child-a.component';
+import { IsChildBComponent } from './data-passing-examples/implicit-subscribe/is-child-b/is-child-b.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { IsChildAComponent } from './data-passing-examples/implicit-subscribe/is
     ExplicitSubscribeComponent,
     ImplicitSubscribeComponent,
     IsChildAComponent,
+    IsChildBComponent,
     ParentChildComponent,
     PcChildAComponent,
     PcChildBComponent,

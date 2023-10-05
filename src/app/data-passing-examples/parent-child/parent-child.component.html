@@ -1,5 +1,11 @@
 <section>
-  <p>parent-child works!</p>
-  <app-pc-child-a (buttonClickEvent)="captureComponentAtext($event)"></app-pc-child-a>
-  <app-pc-child-b [incomingAtext]="componentAtext"></app-pc-child-b>
+  <h2>Child -> Parent -> Child Communication (No Observables)</h2>
+  <div>
+    <!-- Child A event emits. This component captures it and passes it to the "captureComponentAtext" method -->
+    <app-pc-child-a (buttonClickEvent)="captureComponentAtext($event)"></app-pc-child-a>
+  </div>
+  <div>
+    <!-- This component passes "componentAtext" (which is assigned in "captureComponentAtext()") to Child B's "incomingText" Input property -->
+    <app-pc-child-b [incomingAtext]="componentAtext"></app-pc-child-b>
+  </div>
 </section>

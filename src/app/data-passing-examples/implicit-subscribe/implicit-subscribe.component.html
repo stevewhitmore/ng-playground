@@ -1,15 +1,26 @@
 <section>
   <h2>Implicit Subscribe</h2>
-  <ng-container *ngIf="cursorView$ | async; else updatedAttributes">
-    <p><strong>(new) cursor color:</strong> {{buttonAttributes.color}}</p>
-    <p><strong>(new) cursor shape:</strong> {{buttonAttributes.shape}}</p>
-  </ng-container>
+  <div>
+    <h3>Changes within the same component using async pipe</h3>
+    <ng-container *ngIf="cursorView$ | async; else updatedAttributes">
+      <strong>(new) cursor color:</strong> {{buttonAttributes.color}}<br>
+      <strong>(new) cursor shape:</strong> {{buttonAttributes.shape}}<br>
+    </ng-container>
 
-  <ng-template #updatedAttributes>
-    <p><strong>cursor color:</strong> {{buttonAttributes.color}}</p>
-    <p><strong>cursor shape:</strong> {{buttonAttributes.shape}}</p>
-  </ng-template>
+    <ng-template #updatedAttributes class="changed">
+      <strong>cursor color:</strong> {{buttonAttributes.color}}<br>
+      <strong>cursor shape:</strong> {{buttonAttributes.shape}}<br>
+    </ng-template>
 
-  <button (click)="changeCursorAttributes()">Change Button Attributes</button>
+    <br>
+    <button (click)="changeCursorAttributes()">Change Button Attributes</button>
+    <br><br>
+  </div>
+  <hr>
+  <div>
+    <h3>Sibling communication through parent using async pipe</h3>
+    <app-is-child-a (apiTriggerEvent)="getData()"></app-is-child-a>
+    <app-is-child-b [incomingData]="response$ | async"></app-is-child-b>
+  </div>
 </section>
 

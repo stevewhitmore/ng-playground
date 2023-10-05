@@ -30,7 +30,7 @@ export class ExplicitSubscribeComponent implements OnInit, OnDestroy {
   }
 
   printHello(incomingAttributes: any) {
-    console.log('Hello from explicitSubscribeComponent');
+    console.log('Hello from ExplicitSubscribeComponent');
 
     this.buttonAttributes = {
       ...this.buttonAttributes,
@@ -53,6 +53,10 @@ export class ExplicitSubscribeComponent implements OnInit, OnDestroy {
       });
   }
 
+  /**
+   * We're responsible for handling the subscription so
+   * if we don't unsubscribe we're going to be in pain later
+   */
   ngOnDestroy(): void {
     this.sub1.unsubscribe();
     this.sub2.unsubscribe();

@@ -36,6 +36,10 @@ export class ImplicitSubscribeComponent implements OnInit {
     }
   }
 
+  /**
+   * The delay operator can be used to help with timing. I use it almost exclusively for examples and playing around but I'm sure it has some other use.
+   * The 'tap' operator is for setting of side-effects
+   */
   changeCursorAttributes() {
     this.cursorView$ = this.cursor$.pipe(
       delay(1000),
